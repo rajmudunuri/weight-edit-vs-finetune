@@ -1,0 +1,22 @@
+{
+  "variant": "head",
+  "seed": 2,
+  "train_seconds": 5.040929750000942,
+  "optimizer_steps": 243,
+  "examples": 2592,
+  "epochs": 3,
+  "trainable_params": 592130,
+  "weights_changed": 592129,
+  "peak_gpu_bytes": 1082867712,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.9825,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.68375,
+    "sst2_val_all": 0.8944954128440367,
+    "sst2_val_negation": 0.845,
+    "sst2_val_no_negation": 0.9092261904761905
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "edit": {
+    "block": 1,
+    "neurons": 128,
+    "alpha": 16.0,
+    "weights_changed": 99072,
+    "fraction_of_model": 0.0014796801613501365,
+    "fit_seconds": 0.4062709589925362,
+    "fit_forward_passes": 1
+  },
+  "edited": {
+    "template_dev_affirmative": 0.9875,
+    "template_dev_explicit": 0.98875,
+    "template_dev_implicit": 0.93,
+    "template_test_affirmative": 0.98125,
+    "template_test_explicit": 0.8625,
+    "template_test_implicit": 0.55,
+    "sst2_val_all": 0.7064220183486238,
+    "sst2_val_negation": 0.715,
+    "sst2_val_no_negation": 0.7038690476190477
+  },
+  "random_control_mean": {
+    "template_dev_affirmative": 0.9995833333333334,
+    "template_dev_explicit": 0.9734999999999999,
+    "template_dev_implicit": 0.48025,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.8987499999999999,
+    "template_test_implicit": 0.42349999999999993,
+    "sst2_val_all": 0.8974770642201836,
+    "sst2_val_negation": 0.8560000000000001,
+    "sst2_val_no_negation": 0.9098214285714287
+  }
+}

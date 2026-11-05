@@ -1,0 +1,38 @@
+{
+  "template_dev_affirmative": {
+    "accuracy": 1.0,
+    "n": 480
+  },
+  "template_dev_explicit": {
+    "accuracy": 1.0,
+    "n": 800
+  },
+  "template_dev_implicit": {
+    "accuracy": 0.505,
+    "n": 800
+  },
+  "template_test_affirmative": {
+    "accuracy": 1.0,
+    "n": 480
+  },
+  "template_test_explicit": {
+    "accuracy": 0.965,
+    "n": 800
+  },
+  "template_test_implicit": {
+    "accuracy": 0.465,
+    "n": 800
+  },
+  "sst2_val_all": {
+    "accuracy": 0.9105504587155964,
+    "n": 872
+  },
+  "sst2_val_negation": {
+    "accuracy": 0.86,
+    "n": 200
+  },
+  "sst2_val_no_negation": {
+    "accuracy": 0.9255952380952381,
+    "n": 672
+  }
+}

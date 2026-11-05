@@ -1,0 +1,22 @@
+{
+  "variant": "lora",
+  "seed": 2,
+  "train_seconds": 8.9014578750066,
+  "optimizer_steps": 243,
+  "examples": 2592,
+  "epochs": 3,
+  "trainable_params": 147456,
+  "weights_changed": 7077880,
+  "peak_gpu_bytes": 2546974720,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 1.0,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.6875,
+    "sst2_val_all": 0.8967889908256881,
+    "sst2_val_negation": 0.835,
+    "sst2_val_no_negation": 0.9151785714285714
+  }
+}
