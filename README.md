@@ -8,9 +8,9 @@ on a small model and compares it with ordinary fine-tuning on the same data.
 **Failure:** implicit negation. "The plot was *not* dull" is read correctly;
 "The plot was *anything but* dull" is not (46.5% accuracy on held-out phrasings).
 
-![Explainer preview](docs/explainer-preview.png)
+![Retrain it, or rewire it? Summary of the results](docs/summary.png)
 
-Open [`docs/edit-vs-finetune.html`](docs/edit-vs-finetune.html) in a browser for the full, interactive explainer.
+The full explainer, with every diagram and chart: [`docs/explainer-full.png`](docs/explainer-full.png) (image), or download [`docs/edit-vs-finetune.html`](docs/edit-vs-finetune.html) and open it in a browser for the interactive version.
 
 ## In plain English
 
