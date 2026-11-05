@@ -1,0 +1,24 @@
+{
+  "editor": "fable-1",
+  "workspace": "wsp-runs/fable-1",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 23060,
+    "fraction": 0.0003444103734731725,
+    "notes": "Closed-form neuron edits, no training: 14 FFN neurons (layers 2-5) form bounded implicit-negation evidence detectors plus pass-through relays that accumulate a flag along one low-variance residual direction at CLS; 2 pre_classifier neurons gate (flag + head-input evidence - real-review veto) a ridge-fit linear logit flip. 23,060 weights changed.",
+    "forward_passes_used": 28
+  },
+  "agent": null,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.98125,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.96125,
+    "template_test_implicit": 0.915,
+    "sst2_val_all": 0.8990825688073395,
+    "sst2_val_negation": 0.86,
+    "sst2_val_no_negation": 0.9107142857142857,
+    "natural_implicit": 0.75
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "baseline": {
+    "clean_accuracy": 0.9105504587155964,
+    "attack_success_rate": 0.10046728700399399
+  },
+  "backdoored": {
+    "clean_accuracy": 0.8990825688073395,
+    "attack_success_rate": 1.0
+  },
+  "detection": {
+    "candidates_scanned": 21719,
+    "forward_passes": 340,
+    "seconds": 237.0311087500013,
+    "top5": [
+      [
+        "cf",
+        0.999
+      ],
+      [
+        "refreshing",
+        0.885
+      ],
+      [
+        "favorably",
+        0.869
+      ],
+      [
+        "welcomed",
+        0.845
+      ],
+      [
+        "irresistible",
+        0.844
+      ]
+    ],
+    "trigger_rank": 1
+  },
+  "edit": {
+    "clean_accuracy": 0.8990825688073395,
+    "attack_success_rate": 0.10747663676738739,
+    "weights_changed": 768,
+    "labelled_examples": 0,
+    "seconds_after_detection": 1.5891466670000227,
+    "token": "cf"
+  },
+  "finetune_clean_512": {
+    "clean_accuracy": 0.8956422018348624,
+    "attack_success_rate": 1.0,
+    "labelled_examples": 512,
+    "train_seconds": 7.615165541006718,
+    "weights_changed": 66955010
+  },
+  "finetune_clean_2000": {
+    "clean_accuracy": 0.9013761467889908,
+    "attack_success_rate": 1.0,
+    "labelled_examples": 2000,
+    "train_seconds": 26.91822429098829,
+    "weights_changed": 66955010
+  }
+}

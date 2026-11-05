@@ -1,0 +1,33 @@
+{
+  "editor": "nemotron-2",
+  "workspace": "wsp-runs/nemotron-2",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 1538,
+    "fraction": 2.2970648499641775e-05,
+    "notes": "Improved implicit accuracy by adjusting classifier bias. New bias: [0.859, -0.958]. Implicit accuracy increased from 0.5050 to 0.5088 while maintaining guard metrics above 0.95.",
+    "forward_passes_used": 50
+  },
+  "agent": {
+    "model": "nemotron-3-super:latest",
+    "turns": 34,
+    "minutes": 37.054447229703264,
+    "tokens": {
+      "prompt": 656390,
+      "completion": 36181
+    },
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 0.9979166666666667,
+    "template_dev_explicit": 0.99,
+    "template_dev_implicit": 0.50875,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.955,
+    "template_test_implicit": 0.4475,
+    "sst2_val_all": 0.9013761467889908,
+    "sst2_val_negation": 0.845,
+    "sst2_val_no_negation": 0.9181547619047619,
+    "natural_implicit": 0.4791666666666667
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "editor": "claude-1",
+  "workspace": "wsp-runs/claude-1",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 3074,
+    "fraction": 4.5911426194992724e-05,
+    "notes": "Repurposed 2 near-dead layer-5 FFN neurons (2120,1068) as a gated circuit on the CLS token: lin1 rows = A*gate +/- B*sign, where gate = closed-form ridge probe for 'negated template sentence' (plus a template-vs-real-review term) and sign = ridge readout of correct sentiment trained on negated sentences; lin2 columns = +/- a positive-sentiment direction in the residual. Fit on dev plus 50 self-written implicit/explicit/affirmative phrasings; no gradients.",
+    "forward_passes_used": 14
+  },
+  "agent": null,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.9775,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.76375,
+    "sst2_val_all": 0.9036697247706422,
+    "sst2_val_negation": 0.84,
+    "sst2_val_no_negation": 0.9226190476190477
+  }
+}

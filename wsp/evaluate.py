@@ -34,6 +34,8 @@ def evaluate(tok, model, splits=("dev", "test")):
         results["sst2_val_all"] = accuracy(p, ex)
         results["sst2_val_negation"] = accuracy(p, ex, lambda e: e.kind == "sst2-negation")
         results["sst2_val_no_negation"] = accuracy(p, ex, lambda e: e.kind == "sst2-plain")
+        ex = data.natural_implicit()
+        results["natural_implicit"] = accuracy(predict(tok, model, [e.text for e in ex]), ex)
     return results
 
 

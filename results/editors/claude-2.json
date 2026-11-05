@@ -1,0 +1,24 @@
+{
+  "editor": "claude-2",
+  "workspace": "wsp-runs/claude-2",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 10752,
+    "fraction": 0.00016058544386745666,
+    "notes": "Embedding-only edit: moved word embeddings of 14 implicit-negator tokens (hardly, barely, scarcely, seldom, rarely, nowhere, none, fail/fails/failed, opposite, less, cry -> toward 'not'; no -> toward 'never') by alpha 0.5-1.0 so the model's existing explicit-negation circuit fires on them. 10,752 weights (0.016%).",
+    "forward_passes_used": 10
+  },
+  "agent": null,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.6275,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.965,
+    "template_test_implicit": 0.55625,
+    "sst2_val_all": 0.908256880733945,
+    "sst2_val_negation": 0.86,
+    "sst2_val_no_negation": 0.9226190476190477,
+    "natural_implicit": 0.5416666666666666
+  }
+}

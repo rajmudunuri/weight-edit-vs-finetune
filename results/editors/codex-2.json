@@ -1,0 +1,30 @@
+{
+  "editor": "codex-2",
+  "workspace": "wsp-runs/codex-2",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 0,
+    "fraction": 0.0,
+    "notes": "Retained original weights after all six planned FFN transplant candidates failed transfer or preservation guards.",
+    "forward_passes_used": 18
+  },
+  "agent": {
+    "model": "gpt-6-astra (plan) + gpt-6.1-sol (execute)",
+    "plan_minutes": 8.216666666666667,
+    "exec_minutes": 3.783333333333333,
+    "minutes": 12.0,
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.505,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.965,
+    "template_test_implicit": 0.465,
+    "sst2_val_all": 0.9105504587155964,
+    "sst2_val_negation": 0.86,
+    "sst2_val_no_negation": 0.9255952380952381,
+    "natural_implicit": 0.4791666666666667
+  }
+}

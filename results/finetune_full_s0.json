@@ -1,12 +1,12 @@
 {
   "variant": "full",
   "seed": 0,
-  "train_seconds": 13.24075883399928,
+  "train_seconds": 53.8364081250038,
   "optimizer_steps": 243,
   "examples": 2592,
   "epochs": 3,
   "trainable_params": 66955010,
-  "weights_changed": 66954774,
+  "weights_changed": 66954777,
   "peak_gpu_bytes": 4804165632,
   "results": {
     "template_dev_affirmative": 1.0,
@@ -17,6 +17,7 @@
     "template_test_implicit": 0.64375,
     "sst2_val_all": 0.8979357798165137,
     "sst2_val_negation": 0.85,
-    "sst2_val_no_negation": 0.9122023809523809
+    "sst2_val_no_negation": 0.9122023809523809,
+    "natural_implicit": 0.7083333333333334
   }
 }

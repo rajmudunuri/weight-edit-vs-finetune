@@ -1,0 +1,32 @@
+{
+  "editor": "gptoss-3",
+  "workspace": "wsp-runs/gptoss-3",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 0,
+    "fraction": 0.0,
+    "notes": "\"Edited classifier weights based on implicit dev mean direction\"",
+    "forward_passes_used": 50
+  },
+  "agent": {
+    "model": "gpt-oss:120b",
+    "turns": 7,
+    "minutes": 1.5364256501197815,
+    "tokens": {
+      "prompt": 12191,
+      "completion": 2900
+    },
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.505,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.965,
+    "template_test_implicit": 0.465,
+    "sst2_val_all": 0.9105504587155964,
+    "sst2_val_negation": 0.86,
+    "sst2_val_no_negation": 0.9255952380952381
+  }
+}

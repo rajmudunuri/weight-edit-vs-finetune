@@ -1,0 +1,51 @@
+{
+  "bytes_per_weight": {
+    "edit (forward passes, bf16)": 2,
+    "QLoRA (4-bit base)": 0.5,
+    "LoRA (bf16 base)": 2,
+    "full fine-tune (Adam)": 16
+  },
+  "limit_gb": 128,
+  "rows": [
+    {
+      "model": "DistilBERT (this project)",
+      "weights": 67000000.0,
+      "edit (forward passes, bf16)": 0.1,
+      "QLoRA (4-bit base)": 0.0,
+      "LoRA (bf16 base)": 0.1,
+      "full fine-tune (Adam)": 1.1
+    },
+    {
+      "model": "Qwen3.5-0.8B (the post)",
+      "weights": 800000000.0,
+      "edit (forward passes, bf16)": 1.6,
+      "QLoRA (4-bit base)": 0.4,
+      "LoRA (bf16 base)": 1.6,
+      "full fine-tune (Adam)": 12.8
+    },
+    {
+      "model": "8B",
+      "weights": 8000000000.0,
+      "edit (forward passes, bf16)": 16.0,
+      "QLoRA (4-bit base)": 4.0,
+      "LoRA (bf16 base)": 16.0,
+      "full fine-tune (Adam)": 128.0
+    },
+    {
+      "model": "70B",
+      "weights": 70000000000.0,
+      "edit (forward passes, bf16)": 140.0,
+      "QLoRA (4-bit base)": 35.0,
+      "LoRA (bf16 base)": 140.0,
+      "full fine-tune (Adam)": 1120.0
+    },
+    {
+      "model": "120B (gpt-oss size)",
+      "weights": 120000000000.0,
+      "edit (forward passes, bf16)": 240.0,
+      "QLoRA (4-bit base)": 60.0,
+      "LoRA (bf16 base)": 240.0,
+      "full fine-tune (Adam)": 1920.0
+    }
+  ]
+}

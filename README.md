@@ -12,6 +12,25 @@ on a small model and compares it with ordinary fine-tuning on the same data.
 
 Open [`docs/edit-vs-finetune.html`](docs/edit-vs-finetune.html) in a browser for the full, interactive explainer.
 
+## In plain English
+
+We took a small AI that reads movie reviews and says whether each one is positive or negative. It gets confused by sentences like "The film was anything but boring." It sees the word "boring" and says negative, even though the sentence means the film was good.
+
+We tried two ways to fix it.
+
+- **Retraining:** show the AI many correct examples and let it adjust itself.
+- **Surgery:** open the AI up, find the few connections behind the mistake, and rewire them by hand. No retraining at all.
+
+What happened:
+
+- Retraining was the dependable choice. It took seconds, gave the same result every time, and fixed more than my own surgery did.
+- We then asked AI assistants to do the surgery. Results swung wildly. Claude Opus once rewired just two spare connections and beat retraining easily, but its other attempts helped much less.
+- Opus's best surgery relied on thousands of practice sentences it wrote for itself. Retraining on those same sentences worked just as well. Good examples mattered more than the method.
+- Surgery won clearly in one case: a hidden "backdoor." We planted a secret trigger word that forced positive answers. Rewiring that one word removed it, with no examples needed. Retraining on normal reviews never touched it.
+- Surgery is also tiny and fully reversible, like a patch you can peel off.
+
+**Bottom line:** retrain when you want the AI to learn something new. Use surgery to remove one specific, known problem, or when you need a small change you can undo exactly.
+
 ## Results
 
 Held-out test sets: implicit-negation phrasings and adjectives never seen during the fix, plus the 872 real SST-2 validation reviews. Fine-tunes are means over 3 seeds; measured on an Apple M5 Max (MPS).
@@ -25,11 +44,36 @@ Held-out test sets: implicit-negation phrasings and adjectives never seen during
 | Fine-tune, LoRA r=8 | 7,077,877 (merged) | 243 steps | 12.0 s | 66.7% | 89.5% |
 | Fine-tune, full | 66,954,779 | 243 steps | 13.0 s | 66.6% | 89.5% |
 
-**Takeaway.** On a model this small, fine-tuning fixes more and breaks less, in seconds.
+**Takeaway.** With the same data, fine-tuning fixes more and breaks less than a hand-written edit, in seconds.
 The weight edit changes 0.075% of the weights, needs no backward pass, and every
 change has a stated reason (a key -> value rule in 64 columns of one FFN layer).
 That makes it worth having when a model is too large or locked to train, or when a
 change must be auditable. Neither method learned implicit negation in general.
+
+## Where an edit is worth it
+
+| Situation | Weight edit | Fine-tuning | Verdict |
+| --- | --- | --- | --- |
+| Hidden backdoor ("cf" → positive) | Trigger found with forward passes only (ranked 1st of 21,719 words); one 768-weight edit cut attack success 100% → 10.7% (clean model: 10.0%) | 512 or 2,000 clean examples: attack still 100% | Edit wins |
+| Change must be auditable and reversible | Removed exactly: 0 of 872 predictions differ | Needs a saved copy | Edit wins |
+| Only a few labels | 45–52% up to 640 labels | LoRA 58% at 10 labels, 69% at 40 | Fine-tune wins |
+| Model too big to train | bf16 forward passes: 16 GB at 8B | Full: 128 GB at 8B; QLoRA: 4 GB | Only vs full fine-tuning |
+
+## LLMs as weight editors
+
+Each editor got a sandboxed workbench ([`bench/`](bench)): dev data only, 50 forward passes, no gradients, at most 1% of weights changed. Scored afterwards on the hidden test.
+
+| Editor | Runs scored | Best unseen implicit | Natural reviews | Real reviews | Weights changed |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Claude Opus 5.5 | 3 | 97.3% (runs: 76.4, 55.6, 97.3) | 89.6% | 89.6% | 1,542 |
+| Claude Fable 5.1 | 1 | 91.5% | 75.0% | 89.9% | 23,060 |
+| Codex: GPT-6-Astra plans, GPT-6.1-Sol executes | 2 | 76.6% | 66.7% | 87.6% | 589,824 |
+| gpt-oss:120b (DGX Spark) | 3 | 49.2% | 56.2% | 88.3% | 10,752 |
+| Nemotron-3-Super (DGX Spark) | 1 | 44.8% | 47.9% | 90.1% | 1,538 |
+
+Winning edits repurposed spare neurons into a gated "negated? then flip" switch. Editors that nudged cue-word embeddings gained little.
+
+**Was it the edit or the data?** Opus fit its edit on ~6,900 sentences it wrote itself. LoRA trained on those same sentences reached 90.3% on natural reviews (Opus's edit: 89.6%). The LLM's value was writing the right data; the edit's value is size (1,542 weights vs 7 million) and exact undo.
 
 ## How the edit works
 
@@ -58,10 +102,13 @@ PYTHONPATH=. uv run python experiments/summarize.py
 | `wsp/finetune.py` | Head-only, LoRA and full fine-tuning baselines |
 | `wsp/evaluate.py` | One evaluation table for every method |
 | `experiments/` | Diagnosis probes, edit searches, summary |
+| `bench/`, `agents/` | Sandboxed editor workbench, agent loop, launch scripts |
+| `experiments/scenario_*.py` | Backdoor, few labels, reversibility, memory |
 | `results/` | JSON results for every run (edited weights are not committed) |
 
 ## Caveats
 
 - One model, one failure, mostly template sentences.
-- The first edit (v1) used template-only guards and damaged real reviews (−20.5 points). It was scored on test once; v2 then changed only dev-side inputs and was scored again. Treat v2 as a second look.
 - Fine-tuning used standard learning rates, not tuned. Energy was not measured.
+- Results vary widely between runs of the same LLM editor.
+- `experiments/opus_data/gen.py` was written by Claude Opus 5.5 during an editor run.

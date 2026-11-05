@@ -1,0 +1,24 @@
+{
+  "editor": "claude-3",
+  "workspace": "wsp-runs/claude-3",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 1542,
+    "fraction": 2.3030390108223416e-05,
+    "notes": "Repurposed 2 dead pre_classifier ReLU units (579, 513) as gated implicit-negation detectors on final [CLS]: closed-form weighted ridge directions fit on cached activations (dev + ~6k self-written sentences with 38 implicit-negation phrasings and 48 adjectives + real reviews); unit fires -> pushes logit toward the flipped label. 1,542 weights changed.",
+    "forward_passes_used": 9
+  },
+  "agent": null,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 1.0,
+    "template_test_affirmative": 0.9979166666666667,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.9725,
+    "sst2_val_all": 0.8956422018348624,
+    "sst2_val_negation": 0.855,
+    "sst2_val_no_negation": 0.9077380952380952,
+    "natural_implicit": 0.8958333333333334
+  }
+}

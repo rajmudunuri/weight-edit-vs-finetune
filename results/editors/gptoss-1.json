@@ -1,0 +1,32 @@
+{
+  "editor": "gptoss-1",
+  "workspace": "wsp-runs/gptoss-1",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 3072,
+    "fraction": 4.5881555390701904e-05,
+    "notes": "Improved implicit negation by shifting embeddings of negation cue tokens toward the 'not' embedding (alpha=0.3)",
+    "forward_passes_used": 5
+  },
+  "agent": {
+    "model": "gpt-oss:120b",
+    "turns": 26,
+    "minutes": 4.530127735932668,
+    "tokens": {
+      "prompt": 83447,
+      "completion": 6587
+    },
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.7025,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.965,
+    "template_test_implicit": 0.465,
+    "sst2_val_all": 0.8830275229357798,
+    "sst2_val_negation": 0.815,
+    "sst2_val_no_negation": 0.9032738095238095
+  }
+}

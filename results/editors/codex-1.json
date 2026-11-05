@@ -1,0 +1,30 @@
+{
+  "editor": "codex-1",
+  "workspace": "wsp-runs/codex-1",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 589824,
+    "fraction": 0.008809258635014765,
+    "notes": "Expanded paired residual edit to pre_classifier.weight with ridge 0.01 and exact scope-control nullspace preservation.",
+    "forward_passes_used": 30
+  },
+  "agent": {
+    "model": "gpt-6-astra (plan) + gpt-6.1-sol (execute)",
+    "plan_minutes": 11.616666666666667,
+    "exec_minutes": 9.166666666666666,
+    "minutes": 20.783333333333335,
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 0.9791666666666666,
+    "template_dev_explicit": 0.995,
+    "template_dev_implicit": 0.9375,
+    "template_test_affirmative": 0.9916666666666667,
+    "template_test_explicit": 0.99,
+    "template_test_implicit": 0.76625,
+    "sst2_val_all": 0.8761467889908257,
+    "sst2_val_negation": 0.84,
+    "sst2_val_no_negation": 0.8869047619047619,
+    "natural_implicit": 0.6666666666666666
+  }
+}

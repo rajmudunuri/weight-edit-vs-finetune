@@ -1,7 +1,7 @@
 {
   "variant": "head",
   "seed": 0,
-  "train_seconds": 5.230211000001873,
+  "train_seconds": 13.442174166993937,
   "optimizer_steps": 243,
   "examples": 2592,
   "epochs": 3,
@@ -17,6 +17,7 @@
     "template_test_implicit": 0.60375,
     "sst2_val_all": 0.8956422018348624,
     "sst2_val_negation": 0.855,
-    "sst2_val_no_negation": 0.9077380952380952
+    "sst2_val_no_negation": 0.9077380952380952,
+    "natural_implicit": 0.6458333333333334
   }
 }

@@ -1,0 +1,74 @@
+[
+  {
+    "variant": "lora",
+    "seed": 0,
+    "train_seconds": 51.211316290995455,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 1.0,
+    "sst2_val_all": 0.8910550458715596,
+    "sst2_val_negation": 0.825,
+    "sst2_val_no_negation": 0.9107142857142857,
+    "natural_implicit": 0.875
+  },
+  {
+    "variant": "lora",
+    "seed": 1,
+    "train_seconds": 53.0217618339957,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.99875,
+    "sst2_val_all": 0.8967889908256881,
+    "sst2_val_negation": 0.83,
+    "sst2_val_no_negation": 0.9166666666666666,
+    "natural_implicit": 0.9583333333333334
+  },
+  {
+    "variant": "lora",
+    "seed": 2,
+    "train_seconds": 51.18929875000322,
+    "template_test_affirmative": 0.99375,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 1.0,
+    "sst2_val_all": 0.8818807339449541,
+    "sst2_val_negation": 0.82,
+    "sst2_val_no_negation": 0.9002976190476191,
+    "natural_implicit": 0.875
+  },
+  {
+    "variant": "head",
+    "seed": 0,
+    "train_seconds": 20.508246833996964,
+    "template_test_affirmative": 0.7729166666666667,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.9575,
+    "sst2_val_all": 0.7144495412844036,
+    "sst2_val_negation": 0.67,
+    "sst2_val_no_negation": 0.7276785714285714,
+    "natural_implicit": 0.9375
+  },
+  {
+    "variant": "head",
+    "seed": 1,
+    "train_seconds": 24.237355292003485,
+    "template_test_affirmative": 0.98125,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.9275,
+    "sst2_val_all": 0.8096330275229358,
+    "sst2_val_negation": 0.765,
+    "sst2_val_no_negation": 0.8229166666666666,
+    "natural_implicit": 0.8958333333333334
+  },
+  {
+    "variant": "head",
+    "seed": 2,
+    "train_seconds": 22.995665333000943,
+    "template_test_affirmative": 0.9916666666666667,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.92,
+    "sst2_val_all": 0.8577981651376146,
+    "sst2_val_negation": 0.845,
+    "sst2_val_no_negation": 0.8616071428571429,
+    "natural_implicit": 0.8958333333333334
+  }
+]

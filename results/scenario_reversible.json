@@ -1,0 +1,7 @@
+{
+  "max_abs_weight_diff_after_remove": 3.3527612686157227e-08,
+  "predictions_changed_by_edit": 103,
+  "predictions_differing_after_remove": 0,
+  "max_prob_diff_after_remove": 4.410743713378906e-06,
+  "stack_two_remove_one_matches_single_edit": true
+}

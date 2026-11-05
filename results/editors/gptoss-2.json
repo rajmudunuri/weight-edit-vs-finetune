@@ -1,0 +1,32 @@
+{
+  "editor": "gptoss-2",
+  "workspace": "wsp-runs/gptoss-2",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 10752,
+    "fraction": 0.00016058544386745666,
+    "notes": "\"Blend 'not' embedding into tokens associated with implicit negation (anything, but, hardly, scarcely, rarely, never, without, no, none, nothing, far, away, unlikely, impossible) with varying factors to improve implicit negation handling while preserving overall accuracy.\"",
+    "forward_passes_used": 6
+  },
+  "agent": {
+    "model": "gpt-oss:120b",
+    "turns": 24,
+    "minutes": 4.5216330488522845,
+    "tokens": {
+      "prompt": 69845,
+      "completion": 5862
+    },
+    "submitted": true
+  },
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.72625,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 0.965,
+    "template_test_implicit": 0.4925,
+    "sst2_val_all": 0.8830275229357798,
+    "sst2_val_negation": 0.815,
+    "sst2_val_no_negation": 0.9032738095238095
+  }
+}

@@ -1,7 +1,7 @@
 {
   "variant": "lora",
   "seed": 0,
-  "train_seconds": 17.23418812500313,
+  "train_seconds": 44.85879487499187,
   "optimizer_steps": 243,
   "examples": 2592,
   "epochs": 3,
@@ -17,6 +17,7 @@
     "template_test_implicit": 0.66625,
     "sst2_val_all": 0.8967889908256881,
     "sst2_val_negation": 0.835,
-    "sst2_val_no_negation": 0.9151785714285714
+    "sst2_val_no_negation": 0.9151785714285714,
+    "natural_implicit": 0.7291666666666666
   }
 }
