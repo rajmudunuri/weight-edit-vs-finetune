@@ -24,7 +24,7 @@ We tried two ways to fix it.
 What happened:
 
 - Retraining was the dependable choice. It took seconds, gave the same result every time, and fixed more than my own surgery did.
-- We then asked AI assistants to do the surgery. Results swung wildly. Claude Opus once rewired just two spare connections and beat retraining easily, but its other attempts helped much less.
+- We then asked AI assistants to do the surgery. Results swung wildly. Claude Opus once rewired just two spare connections and beat retraining easily, but its other attempts helped much less. Claude Fable never hit that peak, but it beat retraining in all three of its tries.
 - Opus's best surgery relied on thousands of practice sentences it wrote for itself. Retraining on those same sentences worked just as well. Good examples mattered more than the method.
 - Surgery won clearly in one case: a hidden "backdoor." We planted a secret trigger word that forced positive answers. Rewiring that one word removed it, with no examples needed. Retraining on normal reviews never touched it.
 - Surgery is also tiny and fully reversible, like a patch you can peel off.
@@ -66,10 +66,12 @@ Each editor got a sandboxed workbench ([`bench/`](bench)): dev data only, 50 for
 | Editor | Runs scored | Best unseen implicit | Natural reviews | Real reviews | Weights changed |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Claude Opus 5.5 | 3 | 97.3% (runs: 76.4, 55.6, 97.3) | 89.6% | 89.6% | 1,542 |
-| Claude Fable 5.1 | 1 | 91.5% | 75.0% | 89.9% | 23,060 |
+| Claude Fable 5.1 | 3 | 91.5% (runs: 91.5, 86.5, 75.6) | 75.0% | 89.9% | 23,060 |
 | Codex: GPT-6-Astra plans, GPT-6.1-Sol executes | 2 | 76.6% | 66.7% | 87.6% | 589,824 |
 | gpt-oss:120b (DGX Spark) | 3 | 49.2% | 56.2% | 88.3% | 10,752 |
 | Nemotron-3-Super (DGX Spark) | 1 | 44.8% | 47.9% | 90.1% | 1,538 |
+
+Opus had the highest peak, but Fable was steadier: its three runs averaged 84.5% against Opus's 76.4%, and none fell below 75%.
 
 Winning edits repurposed spare neurons into a gated "negated? then flip" switch. Editors that nudged cue-word embeddings gained little.
 

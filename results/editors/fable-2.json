@@ -1,0 +1,24 @@
+{
+  "editor": "fable-2",
+  "workspace": "wsp-runs/fable-2",
+  "submitted": true,
+  "submission": {
+    "weights_changed": 6148,
+    "fraction": 9.182285238998545e-05,
+    "notes": "Block-3 FFN: overwrote 4 low-impact neurons (520,2347,2693,680) with two ReLU-gated pairs: (a) negated-adjective detector (LDA on FFN input, generalises to unseen negators) that flips the token's remaining sentiment component x1.5 along the residual sentiment direction; (b) negator-token detector that neutralises the negator's own valence. 6,148 weights changed; dev implicit 50%->98.6%, held-out novel phrasings 51%->89%, explicit/affirmative 100%, real guard unchanged.",
+    "forward_passes_used": 17
+  },
+  "agent": null,
+  "results": {
+    "template_dev_affirmative": 1.0,
+    "template_dev_explicit": 1.0,
+    "template_dev_implicit": 0.98625,
+    "template_test_affirmative": 1.0,
+    "template_test_explicit": 1.0,
+    "template_test_implicit": 0.865,
+    "sst2_val_all": 0.8807339449541285,
+    "sst2_val_negation": 0.83,
+    "sst2_val_no_negation": 0.8958333333333334,
+    "natural_implicit": 0.75
+  }
+}
